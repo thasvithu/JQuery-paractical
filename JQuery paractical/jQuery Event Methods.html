@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1 align="center">jQuery Event Methods</h1>
+
+    <div>
+        <h3>When you click on the following button, it ill disapper.</h3>
+        <button id="btn1">Click me</button>
+    </div>
+
+    <div>
+        <h3>When you double click on the following button, it ill disapper.</h3>
+        <button id="btn2">Click me</button>
+    </div>
+
+    <div>
+        <h3>When you mouse enters following it will change it's color's to change</h3>
+        <p id="btn3">Click me</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $(this).hide(); // this sis select current html element
+            });
+
+            $("#btn2").dblclick(function () {
+                $(this).hide(); 
+            });
+
+            $("#btn3").click(function () {
+                $(this).css('background-color','pink');
+            });
+        });
+    </script>
+</body>
+
+</html>

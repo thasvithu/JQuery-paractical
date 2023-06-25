@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+    <style>
+        p {
+            background-color: aqua;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">jQuery Hide/Show Effects</h1>
+    <button type="button" class="hidebtn">Hide</button>
+    <button type="button" class="showbtn">Show</button>
+    <button type="button" class="togglebtn">Toggle</button>
+
+    <hr>
+
+    <p class="pfast">This paragraph will show/hide with fast speed.</p>
+    <p class="pslow">This paragraph will show/hide with slow speed.</p>
+    <p class="pclass">This paragraph will show/hide with very 2000ms.</p>
+
+    <hr>
+
+    <h1 align="center">jQuery Effects - Fading</h1>
+    <button type="button" class="fadeOutBtn">Fade Out</button>
+    <button type="button" class="fadeInBtn">Fade In</button>
+    <button type="button" class="fadeToBtn">Fade To</button>
+
+    <p id="pfast">This paragraph will fadeIn/fadeOut with fast speed.</p>
+    <p id="pslow">This paragraph will fadeIn/fadeOut with slow speed.</p>
+    <p id="pclass">This paragraph will fadeIn/fadeOut with very 2000ms.</p>
+
+    <hr>
+
+    <h1 align="center">jQuery Effects - Sliding</h1>
+
+    <script>
+        // ********* jQuery Hide/Show Effects *************      
+        $(document).ready(function () {
+            // hide the visible paragraphs
+            $(".hidebtn").click(function () {
+                $(".pfast").hide("fast");
+                $(".pslow").hide("slow");
+                $(".pclass").hide(2000);
+            });
+
+            // show the hidden paragraphs
+            $(".showbtn").click(function () {
+                $(".pfast").show("fast");
+                $(".pslow").show("slow");
+                $(".pclass").show(2000);
+            });
+
+            // Toggle betwen show and hide
+            $(".togglebtn").click(function () {
+                $(".pfast").toggle("fast");
+                $(".pslow").toggle("slow");
+                $(".pclass").toggle(2000);
+            });
+
+            // ********* jQuery Effects - Fading *************
+            // FadeOut displayed paragraphs  
+            $(".fadeOutBtn").click(function () {
+                $("#pfast").fadeOut("fast");
+                $("#pslow").fadeOut("slow");
+                $("#pclass").fadeOut(2000);
+            });
+
+            // FadeIn displayed paragraphs  
+            $(".fadeInBtn").click(function () {
+                $("#pfast").fadeIn("fast");
+                $("#pslow").fadeIn("slow");
+                $("#pclass").fadeIn(2000);
+            });
+
+            // FadeTo displayed paragraphs  
+            // Note when we used fadeTo we need to mention the opacity  level
+            $(".fadeToBtn").click(function () {
+                $("#pfast").fadeTo("fast", 0.5);
+                $("#pslow").fadeTo("slow", 0.4);
+                $("#pclass").fadeTo(2000, 0.3);
+            });
+        });
+    </script>
+</body>
+
+</html>

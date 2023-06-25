@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Add JQuery using CDN method-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!--Add JQuery using local method-->
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1 align="center">write less, do more</h1>
+    <p id="pid">This is a sample paragraph</p>
+
+    <script>
+        // $(selector).action()
+
+        $(document).ready(function () {
+            $("#pid").click(function () {
+                alert("Iam from JQuery")
+            });
+
+            document.getElementById("pid").onclick = function () {
+                alert("Iam from javasript");
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

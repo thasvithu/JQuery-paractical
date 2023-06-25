@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Validation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 100px;
+        }
+
+        form input {
+            margin: 3px 0px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">jQuery Validation</h1>
+    <hr>
+    <form name="registration" action="#" method="post">
+        <label for="fname">Enter your Name:</label>
+        <input type="text" name="name" placeholder="Your Name">
+
+        <label for="email">Enter your Email:</label>
+        <input type="email" name="email" placeholder="Your Email Address">
+
+        <label for="psw">Enter a Password:</label>
+        <input type="password" name="password" placeholder="Your Password">
+
+        <label for="confirm-psw">Confirm the Password:</label>
+        <input type="password" name="confirmpassword" placeholder="Your Password">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        $(function () {
+            $("form[name='registration']").validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    confirmpassword: {
+                        required: true,
+                        minlength: 5,
+                        equalTo: "#password"
+                    }
+                },
+                messages: {
+                    name: "Please enter your name",
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    password: {
+                        required: "Please enter a password",
+                        minlength: "Password must be at least 5 characters long"
+                    },
+                    confirmpassword: {
+                        required: "Please confirm your password",
+                        minlength: "Password must be at least 5 characters long",
+                        equalTo: "Passwords do not match"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
